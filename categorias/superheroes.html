@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhéroes - Laboratorio Friki</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">Laboratorio Friki</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown">Categorías</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="superheroes.html">Superhéroes</a></li>
+              <li><a class="dropdown-item" href="wallpaper.html">Wallpapers</a></li>
+              <li><a class="dropdown-item" href="cartas.html">TCG</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container main-container">
+    <h2 class="mb-4 text-center fw-bold">Superhéroes</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Superman" data-author="Autor: John Doe" data-img="../assets/superheroes/Superman.jpeg">
+          <img src="../assets/superheroes/Superman.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Superman</h4>
+            <p>El hombre de acero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Hulk" data-author="Autor: Jane Doe" data-img="../assets/superheroes/Hulk.jpeg">
+          <img src="../assets/superheroes/Hulk.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Hulk</h4>
+            <p>¿Bruce Wanner o Hulk?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Batman" data-author="Autor: Bruce Wayne" data-img="../assets/superheroes/Batman.jpeg">
+          <img src="../assets/superheroes/Batman.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Batman</h4>
+            <p>Caballero oscuro</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Superman" data-author="Autor: John Doe" data-img="../assets/superheroes/Superman.jpeg">
+          <img src="../assets/superheroes/Superman.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Superman</h4>
+            <p>El hombre de acero</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Card 4-->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Spiderman" data-author="Autor: John Doe" data-img="../assets/superheroes/Spiderman.jpeg">
+          <img src="../assets/superheroes/Spiderman.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Spiderman</h4>
+            <p>El hombre araña</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="hover-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Iron Man" data-author="Autor: John Doe" data-img="../assets/superheroes/Ironman.jpeg">
+          <img src="../assets/superheroes/Ironman.jpeg" class="img-fluid rounded-3">
+          <div class="hover-info rounded-3">
+            <h4>Iron Man</h4>
+            <p>El hombre del traje biónico</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+ <!-- modal -->
+  <div class="modal" id="imageModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title justify-content-center" id="modalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body justify-content-center">
+          <img class="modalImg" id="modalImg" alt="">
+          <p id="modalAuthor"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Rellenar modal dinámicamente
+    const imageModal = document.getElementById('imageModal');
+    imageModal.addEventListener('show.bs.modal', event => {
+      const card = event.relatedTarget;
+      const title = card.getAttribute('data-title');
+      const author = card.getAttribute('data-author');
+      const imgSrc = card.getAttribute('data-img');
+
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalAuthor').textContent = author;
+      document.getElementById('modalImg').src = imgSrc;
+    });
+  </script>
+
+</body>
+</html>
